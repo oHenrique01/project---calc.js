@@ -16,7 +16,7 @@ h1 {
 }
 
 .calculator {
-    background-color: white;
+    background-color: black;
     width: 300px;
     border-radius: 10px;
     padding: 1rem;
@@ -77,3 +77,50 @@ button:hover {
 #operation:hover {
     background-color: #ff9800;
 }
+
+#copyToClipboard {
+  background-color: transparent;
+  border: solid var(--border-color);
+  border-width: 2px;
+  border-radius: .5rem 0 0 .5rem;
+  color: white;
+  cursor: pointer;
+  height: 4.25rem;
+  width: 6rem;
+}
+
+#btn-Theme {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.sunImg{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 40px;
+    height: 40px;
+}
+
+#btn-Theme:hover .sunImg {
+    transform: rotate(20deg);
+    transition: .4s;
+}
+
+.moonImg {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 35px;
+    height: 35px;
+}
+
+.moonImg:hover {
+    transform: rotate(20deg);
+    transition: .4s;
+}
+

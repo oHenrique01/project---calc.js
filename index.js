@@ -1,5 +1,3 @@
-//4 funções - inserir elementos, limpar, remover e calcular
-
 const displayInput = document.getElementById("display")
 const btns = document.querySelectorAll(".charKey")
 
@@ -36,4 +34,63 @@ btnResult.addEventListener('click', function(){
         displayInput.value = 'Error'
     }
 })
+
+//Trocar de tema
+const btnTheme = document.getElementById("btn-Theme")
+const img = document.querySelector(".sunImg")
+
+btnTheme.addEventListener('click', () => {
+    if(img.classList.contains('sunImg')){
+        //Trocar para Lua
+        img.src = 'midias/lua.png'
+        img.classList.remove('sunImg')
+        img.classList.add('moonImg')
+
+
+        updateTheme("moon") 
+        localStorage.setItem('theme', 'moon')
+    } else {
+        //Trocar para Sol
+        img.src = 'midias/brilho-do-sol.png'
+        img.classList.remove('moonImg')
+        img.classList.add('sunImg')
+
+        updateTheme("sun")
+        localStorage.setItem('theme', 'sun')
+    }
+    
+})
+
+function updateTheme(theme){
+    const body = document.body.style
+
+    if(theme === "moon"){
+        body.backgroundColor = 'rgba(237, 237, 237, 1)'
+    } else {
+        body.backgroundColor = '#1C1B1B'
+    }
+    
+}
+
+//Recarregar tema escolhido
+window.addEventListener('load', () => {
+    const savedTheme = localStorage.getItem('theme')
+
+    if(savedTheme){
+        updateTheme(savedTheme)
+        if(savedTheme === "moon") {
+            img.src = 'midias/lua.png'
+            img.classList.remove('sunImg')
+            img.classList.add('moonImg')
+
+        } else {
+            img.src = 'midias/brilho-do-sol.png'
+            img.classList.remove('moonImg')
+            img.classList.add('sunImg')
+        }
+    }
+})
+
+
+
 
