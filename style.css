@@ -46,6 +46,8 @@ button {
     font-size: 20px;
     border: none;
     border-radius: 6px;
+    color: black !important;
+    -webkit-text-fill-color: black;
     
 }
 
